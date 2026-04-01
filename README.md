@@ -1,1 +1,1 @@
-# First-Javascript-prgm
+# Marks Calculator
