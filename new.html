@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Marks Calculator</h1>
+
+        <input type="number" id="sub1" placeholder="Enter Subject 1 Marks"><br>
+        <input type="number" id="sub2" placeholder="Enter Subject 2 Marks"><br>
+        <input type="number" id="sub3" placeholder="Enter Subject 3 Marks"><br>
+
+        <button onclick="calculateMarks()">Calculate</button>
+
+        <div class="result" id="output"></div>
+    </div>
+
+    <script>
+        function calculateMarks() {
+            let m1 = parseFloat(document.getElementById("sub1").value) || 0;
+            let m2 = parseFloat(document.getElementById("sub2").value) || 0;
+            let m3 = parseFloat(document.getElementById("sub3").value) || 0;
+
+            let total = m1 + m2 + m3;
+            let average = total / 3;
+
+            document.getElementById("output").innerHTML =
+                "Total Marks: " + total + "<br>Average Marks: " + average.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
